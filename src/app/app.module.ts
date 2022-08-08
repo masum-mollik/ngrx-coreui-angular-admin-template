@@ -46,6 +46,7 @@ import {
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { StoreModule } from '@ngrx/store';
+import {CarouselModule} from "ngx-bootstrap/carousel";
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -86,7 +87,7 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     {

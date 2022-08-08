@@ -20,7 +20,7 @@ import { ChartjsModule } from '@coreui/angular-chartjs';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
-import { WidgetsModule } from '../widgets/widgets.module';
+import { MachineLearningModelModule } from '../widgets/machine-learning-model.module';
 
 @NgModule({
   imports: [
@@ -40,7 +40,7 @@ import { WidgetsModule } from '../widgets/widgets.module';
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    MachineLearningModelModule
   ],
   declarations: [DashboardComponent]
 })

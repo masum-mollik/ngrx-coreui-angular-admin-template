@@ -1,0 +1,30 @@
+<c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
+  <ng-container *ngIf="cards && cards.length >= 0">
+    <c-col *ngFor="let card of cards">
+      <c-card class="h-100">
+        <c-card-body (click)="openModalWithComponent(card)">
+          <h5 cCardTitle>{{card.name}}</h5>
+          <p cCardText>
+            {{card.description}}
+          </p>
+          <c-container class ="badge-container">
+            <span class="tag-header">
+              Tags
+            </span>
+            <div>
+              <c-row class="align-items-start">
+                <c-col *ngFor="let tag of card.tags"  class = "badge-column">
+                  <c-badge color="dark" shape="rounded-1">{{tag}}</c-badge>
+                </c-col>
+              </c-row>
+            </div>
+          </c-container >
+          <div class ="badge-container">
+            <span class="tag-header">State</span>
+            <div>{{card.state}}</div>
+          </div>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </ng-container>
+</c-row>

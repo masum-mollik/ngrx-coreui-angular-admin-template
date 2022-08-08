@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GridModule, WidgetModule } from '@coreui/angular';
+import { ButtonModule, DropdownModule, GridModule, WidgetModule } from '@coreui/angular';
+import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '../../../icons/icon-subset';
-import { WidgetsEComponent } from './widgets-e.component';
+import { MachineLearningModelsComponent } from './machine-learning-models.component';
 
-describe('WidgetsEComponent', () => {
-  let component: WidgetsEComponent;
-  let fixture: ComponentFixture<WidgetsEComponent>;
+describe('MachineLearningModelsComponent', () => {
+  let component: MachineLearningModelsComponent;
+  let fixture: ComponentFixture<MachineLearningModelsComponent>;
   let iconSetService: IconSetService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WidgetsEComponent ],
-      imports: [WidgetModule, GridModule, ChartjsModule],
+      declarations: [ MachineLearningModelsComponent ],
+      imports: [WidgetModule, DropdownModule, IconModule, ButtonModule, ChartjsModule, GridModule],
       providers: [IconSetService]
     })
     .compileComponents();
@@ -24,7 +25,7 @@ describe('WidgetsEComponent', () => {
     iconSetService = TestBed.inject(IconSetService);
     iconSetService.icons = { ...iconSubset };
 
-    fixture = TestBed.createComponent(WidgetsEComponent);
+    fixture = TestBed.createComponent(MachineLearningModelsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

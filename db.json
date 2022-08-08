@@ -1,0 +1,271 @@
+{
+  "models": [
+    {
+      "id": "1",
+      "name": "Linear Regression (LR)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "2",
+      "name": "Linear Discriminant Analysis (LDA)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "3",
+      "name": "Support Vector Machine (SVM)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "4",
+      "name": "Quadratic Discriminant Analysis (QDA)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "5",
+      "name": "Random Forest (RF)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "6",
+      "name": "K-Nearest Neighbors (KNN)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Unsupervised", "Clustering"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "7",
+      "name": "Nearest Centroid",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "8",
+      "name": "Naive Bayes",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "9",
+      "name": "Perceptron",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "10",
+      "name": "Decision Tree (DT)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "11",
+      "name": "Dummy",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Dummy"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "12",
+      "name": "Neural Networks",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Unsupervised", "Clustering"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "13",
+      "name": "Linear Regression (LR)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "14",
+      "name": "Linear Regression (LR)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "15",
+      "name": "Linear Discriminant Analysis (LDA)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "16",
+      "name": "Support Vector Machine (SVM)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "17",
+      "name": "Quadratic Discriminant Analysis (QDA)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "18",
+      "name": "Random Forest (RF)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "19",
+      "name": "K-Nearest Neighbors (KNN)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Unsupervised", "Clustering"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "20",
+      "name": "Nearest Centroid",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "21",
+      "name": "Naive Bayes",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "22",
+      "name": "Perceptron",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Classification"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "23",
+      "name": "Decision Tree (DT)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "24",
+      "name": "Dummy",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Dummy"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "25",
+      "name": "Neural Networks",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Non-linear", "Unsupervised", "Clustering"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    },
+    {
+      "id": "26",
+      "name": "Linear Regression (LR)",
+      "description": "quam id leo in vitae turpis massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis",
+      "state": "On",
+      "tags": ["Linear", "Supervised", "Regression"],
+      "url": "",
+      "requestBody": {},
+      "responseBody": {}
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}

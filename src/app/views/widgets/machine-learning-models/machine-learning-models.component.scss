@@ -1,0 +1,13 @@
+.badge-container{
+  display: flex;
+  margin-bottom: 10px;
+  padding-left: 0;
+  .tag-header{
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  .badge-column{
+    padding-left: 0;
+    max-width: fit-content;
+  }
+}
