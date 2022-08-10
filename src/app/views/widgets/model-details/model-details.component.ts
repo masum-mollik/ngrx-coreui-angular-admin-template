@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BsModalRef} from "ngx-bootstrap/modal";
 import {MachineLearningModelService} from "../services/machine-learning-model.service";
-import {IMachineLearningModel} from "../machine-learning-models/machine-learning-models.component";
+import {IMachineLearningModel, MachineLearningModelState} from "../models/machine-learning-models.model";
+import {Store} from "@ngrx/store";
+import {AppState} from "../state/state";
+import {machineLearningModelById} from "../state/machine-learning-models.selector";
+import {updateMachineLearningModeStateById} from "../state/machine-learning-models.action";
 
 @Component({
   selector: 'app-model-details',
@@ -11,17 +15,34 @@ import {IMachineLearningModel} from "../machine-learning-models/machine-learning
 export class ModelDetailsComponent implements OnInit {
   modelId: string = '';
   model: IMachineLearningModel;
+
   constructor(public bsModalRef: BsModalRef,
-              private machineLearningModelService: MachineLearningModelService) {
+              private machineLearningModelService: MachineLearningModelService,
+              private store: Store<AppState>) {
     this.model = {} as IMachineLearningModel;
   }
 
   ngOnInit(): void {
-    this.machineLearningModelService.getModelById(this.modelId).subscribe((response: IMachineLearningModel) => {
-      if (response) {
-        this.model = response;
-      }
+    this.store.select(machineLearningModelById(this.modelId)).subscribe((model: IMachineLearningModel) => {
+      this.model = model;
+      this.model.state = MachineLearningModelState.Starting;
+      return;
     });
   }
 
+  updateStatus() {
+    if (this.model.state === MachineLearningModelState.Off) {
+      this.store.dispatch(updateMachineLearningModeStateById({
+        machineLearningModelId: this.model.id,
+        modelState: MachineLearningModelState.Starting
+      }));
+    }
+
+    if (this.model.state === MachineLearningModelState.On) {
+      this.store.dispatch(updateMachineLearningModeStateById({
+        machineLearningModelId: this.model.id,
+        modelState: MachineLearningModelState.Stopping
+      }));
+    }
+  }
 }

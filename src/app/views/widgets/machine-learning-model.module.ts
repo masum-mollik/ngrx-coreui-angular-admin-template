@@ -1,26 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import {
-  BadgeModule,
-  ButtonModule,
-  CardModule,
-  DropdownModule,
-  GridModule,
-  ProgressModule,
-  SharedModule,
-  WidgetModule
-} from '@coreui/angular';
-import { IconModule } from '@coreui/icons-angular';
-import { ChartjsModule } from '@coreui/angular-chartjs';
+import {BadgeModule, ButtonModule, CardModule, GridModule, SharedModule, WidgetModule} from '@coreui/angular';
+import {IconModule} from '@coreui/icons-angular';
 
-import { DocsComponentsModule } from '@docs-components/docs-components.module';
+import {DocsComponentsModule} from '@docs-components/docs-components.module';
 
-import { MachineLearningModelsRoutingModule } from './machine-learning-models-routing.module';
-import { MachineLearningModelsComponent } from './machine-learning-models/machine-learning-models.component';
+import {MachineLearningModelsRoutingModule} from './machine-learning-models-routing.module';
+import {MachineLearningModelsComponent} from './machine-learning-models/machine-learning-models.component';
 import {MachineLearningModelService} from "./services/machine-learning-model.service";
 import {HttpClientModule} from "@angular/common/http";
-import { ModelDetailsComponent } from './model-details/model-details.component';
+import {ModelDetailsComponent} from './model-details/model-details.component';
 import {ModalModule} from "ngx-bootstrap/modal";
 
 @NgModule({

@@ -1,26 +1,12 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  } from '@angular/core';
-import {MachineLearningModelService} from "../services/machine-learning-model.service";
-import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
+import {ChangeDetectionStrategy, Component, OnInit,} from '@angular/core';
+import {BsModalRef, BsModalService, ModalOptions} from 'ngx-bootstrap/modal';
 import {ModelDetailsComponent} from "../model-details/model-details.component";
+import {Store} from "@ngrx/store";
+import {loadMachineLearningModelsType} from "../state/machine-learning-models.action";
+import {machineLearningModelList} from "../state/machine-learning-models.selector";
+import {AppState} from "../state/state";
+import {IMachineLearningModel} from "../models/machine-learning-models.model";
 
-export interface IMachineLearningModel {
-  id: string;
-  name: string;
-  description: string;
-  state: MachineLearningModelState;
-  tags: string[];
-  url: string;
-}
-export enum MachineLearningModelState {
-  On ='On',
-  Starting = 'Starting',
-  Stopping = 'Stopping',
-  Off = 'Off'
-}
 @Component({
   selector: 'app-machine-learning-model',
   templateUrl: './machine-learning-models.component.html',
@@ -30,15 +16,16 @@ export enum MachineLearningModelState {
 export class MachineLearningModelsComponent implements OnInit {
   bsModalRef?: BsModalRef;
   cards: IMachineLearningModel[] = [];
-  constructor(private machineLearningModelService: MachineLearningModelService,
-              private modalService: BsModalService) {}
+
+  constructor(private modalService: BsModalService,
+              private store: Store<AppState>) {
+  }
 
   ngOnInit(): void {
-    this.machineLearningModelService.getModelList().subscribe((response: IMachineLearningModel[]) => {
-      console.log(response);
-      this.cards = [...response];
-    });
+    this.store.select(machineLearningModelList).subscribe(models => this.cards = [...models]);
+    this.store.dispatch({type: loadMachineLearningModelsType});
   }
+
   openModalWithComponent(model: IMachineLearningModel) {
     const initialState: ModalOptions = {
       initialState: {

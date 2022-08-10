@@ -47,6 +47,12 @@ import {
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import { StoreModule } from '@ngrx/store';
 import {CarouselModule} from "ngx-bootstrap/carousel";
+import { EffectsModule } from '@ngrx/effects';
+import {machineLearningModelReducer} from "./views/widgets/state/machine-learning-models.reducer";
+import {MachineLearningModelsEffect} from "./views/widgets/state/machine-learning-models.effect";
+import {HttpClientModule} from "@angular/common/http";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -87,7 +93,10 @@ const APP_CONTAINERS = [
     BadgeModule,
     ListGroupModule,
     CardModule,
-    StoreModule.forRoot({}, {})
+    HttpClientModule,
+    StoreModule.forRoot({machineLearningModels: machineLearningModelReducer}, {}),
+    EffectsModule.forRoot([MachineLearningModelsEffect]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [
     {
