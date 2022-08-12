@@ -2,8 +2,12 @@
   display: flex;
   margin-bottom: 20px;
   justify-content: flex-end;
+  align-items: center;
   border-width: 5px;
   padding: 5px;
+  .tag-button-group{
+    margin-right: 20px;
+  }
 }
 .badge-container{
   display: flex;

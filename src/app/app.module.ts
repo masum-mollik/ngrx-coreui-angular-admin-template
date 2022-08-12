@@ -3,6 +3,7 @@ import {CommonModule, HashLocationStrategy, LocationStrategy, PathLocationStrate
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -98,7 +99,8 @@ const APP_CONTAINERS = [
     HttpClientModule,
     StoreModule.forRoot({machineLearningModels: machineLearningModelReducer}, {}),
     EffectsModule.forRoot([MachineLearningModelsEffect]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    ButtonsModule.forRoot()
   ],
   providers: [
     {

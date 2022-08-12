@@ -19,30 +19,60 @@ import {takeUntil} from "rxjs/operators";
 })
 export class MachineLearningModelsComponent implements OnInit, OnDestroy {
   bsModalRef?: BsModalRef;
-  cards: IMachineLearningModel[] = [];
+  machineLearningModels: IMachineLearningModel[] = [];
   filteredItems: IMachineLearningModel[] = [];
   searchText = new FormControl('');
-  text: string | null = '';
   unsubscribe = new Subject();
+  searchedTag: string | undefined = '';
+  tags: string[] = ['computer vision', 'education', 'nlp', 'data visualization', 'classification']
+  searchContext: Map<string, IMachineLearningModel[]> = new Map<string, IMachineLearningModel[]>()
 
   constructor(private modalService: BsModalService,
               private store: Store<AppState>) {
   }
 
   ngOnInit(): void {
-    this.searchText.valueChanges.subscribe(text => {
-      this.text = text;
-      this.searchByTextOrDescription(text);
+    this.store.select(machineLearningModelList).pipe(takeUntil(this.unsubscribe)).subscribe(models => {
+      this.machineLearningModels = [...models];
+      this.createSearchContext();
+
+      if (this.searchText.value && this.searchText.value.length > 0) {
+        this.searchByTextOrDescription(this.searchText.value);
+      }
+
+      if (this.searchedTag) {
+        this.searchByTag();
+      }
     });
 
-    this.store.select(machineLearningModelList).pipe(takeUntil(this.unsubscribe)).subscribe(models => this.cards = [...models]);
-
     this.store.dispatch({type: loadMachineLearningModelsType});
+
+    this.searchText.valueChanges.subscribe(text => {
+      this.searchByTextOrDescription(text);
+    });
   }
 
   private searchByTextOrDescription(text: string | null) {
-    this.filteredItems = text ? this.cards.filter(item =>
-      item.tags.includes(text.toLowerCase()) || item.description.toLowerCase().includes(text.toLowerCase())) : [];
+    this.filteredItems = text ? this.machineLearningModels.filter(item =>
+      item.name.toLowerCase().includes(text.toLowerCase()) || item.description.toLowerCase().includes(text.toLowerCase())) : [];
+    this.searchedTag = '';
+  }
+
+  searchByTag() {
+    console.log(this.searchedTag)
+    if (this.searchedTag) {
+      this.filteredItems = this.searchContext.get(this.searchedTag) ?? [];
+      this.searchText.setValue('', {emitEvent: false});
+    }
+  }
+
+  private createSearchContext() {
+    this.tags.forEach(tag => {
+      let matchedItemsByTag = this.machineLearningModels.filter( model => {
+        return model.tags.includes(tag);
+      });
+      this.searchContext.set(tag, matchedItemsByTag);
+    });
   }
 
   openModalWithComponent(model: IMachineLearningModel) {

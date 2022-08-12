@@ -1,37 +1,44 @@
 <div>
-<div class="search-container">
-  <div>
-    <input [formControl]="searchText" id="name" placeholder="Search..." type="text">
+  <div class="search-container">
+    <div (click)="searchByTag()" class="btn-group tag-button-group" btnRadioGroup [(ngModel)]="searchedTag">
+      <label *ngFor="let tag of tags" class="btn btn-info" [btnRadio]="tag"
+             [uncheckable]="true" tabindex="0" role="button">{{tag}}</label>
+    </div>
+    <div>
+      <input [formControl]="searchText" id="name" placeholder="Search..." type="text">
+    </div>
   </div>
-</div>
-<c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
-  <ng-container *ngIf="cards && cards.length >= 0">
-    <c-col *ngFor="let card of (text ? filteredItems : cards)">
-      <c-card class="h-100">
-        <c-card-body (click)="openModalWithComponent(card)">
-          <h5 cCardTitle>{{card.name}}</h5>
-          <p cCardText>
-            {{card.description}}
-          </p>
-          <c-container class ="badge-container">
+  <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
+    <ng-container *ngIf="machineLearningModels && machineLearningModels.length >= 0">
+      <c-col *ngFor="let model of (searchText.value || searchedTag ? filteredItems : machineLearningModels)">
+        <c-card class="h-100">
+          <c-card-body (click)="openModalWithComponent(model)">
+            <h5 cCardTitle>{{model.name}}</h5>
+            <p cCardText>
+              {{model.description}}
+            </p>
+            <c-container class="badge-container">
             <span class="tag-header">
               Tags
             </span>
-            <div>
-              <c-row class="align-items-start">
-                <c-col *ngFor="let tag of card.tags"  class = "badge-column">
-                  <c-badge color="dark" shape="rounded-1">{{tag}}</c-badge>
-                </c-col>
-              </c-row>
+              <div>
+                <c-row class="align-items-start">
+                  <c-col *ngFor="let tag of model.tags" class="badge-column">
+                    <c-badge color="dark" shape="rounded-1">{{tag}}</c-badge>
+                  </c-col>
+                </c-row>
+              </div>
+            </c-container>
+            <div class="badge-container">
+              <span class="tag-header">State</span>
+              <div>
+                {{model.state}}
+                <c-spinner *ngIf="!(model.state==='On' || model.state === 'Off')" size="sm" variant="grow"></c-spinner>
+              </div>
             </div>
-          </c-container >
-          <div class ="badge-container">
-            <span class="tag-header">State</span>
-            <div>{{card.state}}</div>
-          </div>
-        </c-card-body>
-      </c-card>
-    </c-col>
-  </ng-container>
-</c-row>
+          </c-card-body>
+        </c-card>
+      </c-col>
+    </ng-container>
+  </c-row>
 </div>

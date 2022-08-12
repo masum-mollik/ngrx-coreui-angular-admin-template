@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import {
   AvatarModule,
@@ -40,7 +41,8 @@ import { MachineLearningModelModule } from '../widgets/machine-learning-model.mo
     ChartjsModule,
     AvatarModule,
     TableModule,
-    MachineLearningModelModule
+    MachineLearningModelModule,
+    ButtonsModule
   ],
   declarations: [DashboardComponent]
 })

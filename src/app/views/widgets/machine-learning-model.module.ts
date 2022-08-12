@@ -5,7 +5,7 @@ import {BadgeModule, ButtonModule, CardModule, GridModule, SharedModule, WidgetM
 import {IconModule} from '@coreui/icons-angular';
 
 import {DocsComponentsModule} from '@docs-components/docs-components.module';
-
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import {MachineLearningModelsRoutingModule} from './machine-learning-models-routing.module';
 import {MachineLearningModelsComponent} from './machine-learning-models/machine-learning-models.component';
 import {MachineLearningModelService} from "./services/machine-learning-model.service";
@@ -36,7 +36,8 @@ import {StateTextDirective} from "./directives/state-text.directive";
     FormsModule,
     ReactiveFormsModule,
     ModalModule.forRoot(),
-    SpinnerModule
+    SpinnerModule,
+    ButtonsModule
   ],
   exports: [
     MachineLearningModelsComponent,
