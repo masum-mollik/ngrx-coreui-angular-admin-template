@@ -15,6 +15,7 @@ import {updateMachineLearningModeStateById} from "../state/machine-learning-mode
 export class ModelDetailsComponent implements OnInit {
   modelId: string = '';
   model: IMachineLearningModel;
+  isUpdatingState: boolean = false;
 
   constructor(public bsModalRef: BsModalRef,
               private machineLearningModelService: MachineLearningModelService,
@@ -23,25 +24,19 @@ export class ModelDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    JSON.stringify({ foo: "sample", bar: "sample" }, null, 4)
     this.store.select(machineLearningModelById(this.modelId)).subscribe((model: IMachineLearningModel) => {
-      this.model = model;
-      this.model.state = MachineLearningModelState.Starting;
+      this.model = {...model};
+      this.isUpdatingState = !(this.model.state === 'On' || this.model.state === 'Off')
       return;
     });
   }
 
   updateStatus() {
-    if (this.model.state === MachineLearningModelState.Off) {
+    if (this.model.state === MachineLearningModelState.Off || this.model.state === MachineLearningModelState.On) {
       this.store.dispatch(updateMachineLearningModeStateById({
         machineLearningModelId: this.model.id,
-        modelState: MachineLearningModelState.Starting
-      }));
-    }
-
-    if (this.model.state === MachineLearningModelState.On) {
-      this.store.dispatch(updateMachineLearningModeStateById({
-        machineLearningModelId: this.model.id,
-        modelState: MachineLearningModelState.Stopping
+        modelState: this.model.state === MachineLearningModelState.Off ? MachineLearningModelState.Starting : MachineLearningModelState.Stopping
       }));
     }
   }

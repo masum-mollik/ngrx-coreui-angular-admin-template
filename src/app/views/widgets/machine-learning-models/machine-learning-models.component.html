@@ -1,6 +1,12 @@
+<div>
+<div class="search-container">
+  <div>
+    <input [formControl]="searchText" id="name" placeholder="Search..." type="text">
+  </div>
+</div>
 <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
   <ng-container *ngIf="cards && cards.length >= 0">
-    <c-col *ngFor="let card of cards">
+    <c-col *ngFor="let card of (text ? filteredItems : cards)">
       <c-card class="h-100">
         <c-card-body (click)="openModalWithComponent(card)">
           <h5 cCardTitle>{{card.name}}</h5>
@@ -28,3 +34,4 @@
     </c-col>
   </ng-container>
 </c-row>
+</div>

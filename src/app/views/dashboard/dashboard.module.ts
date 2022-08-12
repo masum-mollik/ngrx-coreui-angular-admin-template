@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
   AvatarModule,
   ButtonGroupModule,
   ButtonModule,
   CardModule,
-  FormModule,
   GridModule,
   NavModule,
   ProgressModule,
@@ -24,6 +23,7 @@ import { MachineLearningModelModule } from '../widgets/machine-learning-model.mo
 
 @NgModule({
   imports: [
+    CommonModule,
     DashboardRoutingModule,
     CardModule,
     NavModule,
@@ -32,9 +32,9 @@ import { MachineLearningModelModule } from '../widgets/machine-learning-model.mo
     CommonModule,
     GridModule,
     ProgressModule,
+    FormsModule,
     ReactiveFormsModule,
     ButtonModule,
-    FormModule,
     ButtonModule,
     ButtonGroupModule,
     ChartjsModule,

@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {BadgeModule, ButtonModule, CardModule, GridModule, SharedModule, WidgetModule} from '@coreui/angular';
+import {BadgeModule, ButtonModule, CardModule, GridModule, SharedModule, WidgetModule, SpinnerModule} from '@coreui/angular';
 import {IconModule} from '@coreui/icons-angular';
 
 import {DocsComponentsModule} from '@docs-components/docs-components.module';
@@ -12,11 +12,14 @@ import {MachineLearningModelService} from "./services/machine-learning-model.ser
 import {HttpClientModule} from "@angular/common/http";
 import {ModelDetailsComponent} from './model-details/model-details.component';
 import {ModalModule} from "ngx-bootstrap/modal";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {StateTextDirective} from "./directives/state-text.directive";
 
 @NgModule({
   declarations: [
     MachineLearningModelsComponent,
-    ModelDetailsComponent
+    ModelDetailsComponent,
+    StateTextDirective
   ],
   imports: [
     CommonModule,
@@ -30,13 +33,17 @@ import {ModalModule} from "ngx-bootstrap/modal";
     CardModule,
     DocsComponentsModule,
     BadgeModule,
-    ModalModule.forRoot()
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
+    SpinnerModule
   ],
   exports: [
     MachineLearningModelsComponent,
   ],
   providers: [
-    MachineLearningModelService
+    MachineLearningModelService,
+    StateTextDirective
   ]
 })
 export class MachineLearningModelModule {

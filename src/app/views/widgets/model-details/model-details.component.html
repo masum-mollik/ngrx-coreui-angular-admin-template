@@ -1,2 +1,80 @@
-<p (click)="updateStatus()">model-details works!</p>
-{{model.name}} {{model.state}}
+<div class="modal-content-container">
+  <div class="modal-content-header">
+    Model Details
+  </div>
+  <div class="modal-content-body">
+    <div class="row-container">
+      <div class="modal-item-title">Name</div>
+      <div class="modal-item-value">
+        {{model.name}}
+      </div>
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">Description</div>
+      <div class="modal-item-value">
+        {{model.description}}
+      </div>
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">
+        State
+      </div>
+      <div class="modal-item-value">
+        {{model.state}}
+        <c-spinner *ngIf="isUpdatingState" size="sm" variant="grow"></c-spinner>
+      </div>
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">
+        Tags
+      </div>
+      <div class="modal-item-value">
+        <!--{{model.tags}}-->
+        <div>
+          <c-container class ="badge-container">
+            <div>
+              <c-row class="align-items-start">
+                <c-col *ngFor="let tag of model.tags"  class = "badge-column">
+                  <c-badge color="dark" shape="rounded-1">{{tag}}</c-badge>
+                </c-col>
+              </c-row>
+            </div>
+          </c-container >
+        </div>
+      </div>
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">
+        URL
+      </div>
+      <div class="modal-item-value">
+        {{model.url}}
+      </div>
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">
+        Request Body Json
+      </div>
+      <div class="modal-item-value">
+        <pre>{{model.requestBodyJson |json}}</pre>
+      </div>
+
+    </div>
+    <div class="row-container">
+      <div class="modal-item-title">
+        Response Body Json
+      </div>
+      <div class="modal-item-value">
+        <pre class="json-container">{{model.responseBodyJson |json}}</pre>
+      </div>
+    </div>
+  </div>
+  <div class="modal-content-footer">
+    <div>
+      <button [appStateText]="model.state" (click)="updateStatus()" class="btn btn-primary" type="button" [disabled] = "isUpdatingState">
+        <span *ngIf="isUpdatingState" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span class="button-text" id="state" >Update</span>
+      </button>
+    </div>
+  </div>
+</div>

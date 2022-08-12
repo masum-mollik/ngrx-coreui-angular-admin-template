@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable} from 'rxjs';
-import {tap} from "rxjs/operators";
+import {delay, tap} from "rxjs/operators";
 import {IMachineLearningModel, MachineLearningModelState} from "../models/machine-learning-models.model";
 
 
@@ -9,7 +9,6 @@ import {IMachineLearningModel, MachineLearningModelState} from "../models/machin
   providedIn: 'root'
 })
 export class MachineLearningModelService {
-  private models: IMachineLearningModel[] = [];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -17,13 +16,7 @@ export class MachineLearningModelService {
   getModelList(): Observable<IMachineLearningModel[]> {
     return this.httpClient.get<IMachineLearningModel[]>('http://localhost:3000/models')
       .pipe(
-        tap(_ => console.log('fetched'))
-      );
-  }
-
-  getModelById(modelId: string): Observable<IMachineLearningModel> {
-    return this.httpClient.get<IMachineLearningModel>(`http://localhost:3000/models/${modelId}`)
-      .pipe(
+        delay(1000),
         tap(_ => console.log('fetched'))
       );
   }

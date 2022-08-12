@@ -12,4 +12,6 @@ export interface IMachineLearningModel {
   state: MachineLearningModelState;
   tags: string[];
   url: string;
+  requestBodyJson: Object;
+  responseBodyJson: Object;
 }

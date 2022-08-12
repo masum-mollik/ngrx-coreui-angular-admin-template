@@ -1,0 +1,81 @@
+.modal-content-container {
+  .modal-content-header{
+    min-height: 60px;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0 10px;
+    box-shadow: 0 2px 2px -2px grey;
+  }
+  .modal-content-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-height: 800px;
+    overflow: auto;
+
+    .row-container {
+      margin-bottom: 10px;
+
+      .modal-item-title {
+        font-weight: 500;
+        padding: 5px 0;
+      }
+
+      .modal-item-value {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        min-height: 30px;
+        max-height: 250px;
+        overflow: auto;
+        padding: 5px;
+
+        .badge-container{
+          display: flex;
+          margin-bottom: 0 !important;
+          padding-left: 20px !important;
+          .badge-column{
+            padding-left: 0;
+            max-width: fit-content;
+          }
+        }
+        pre::-webkit-scrollbar {
+          width: 0 !important;
+          background-color: white !important;
+        }
+        pre::-webkit-scrollbar-thumb {
+          width: 0 !important;
+          background-color: whitesmoke !important;
+          border-radius: 0 !important;
+        }
+      }
+    }
+  }
+  .modal-content-footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 10px;
+    box-shadow: 0 2px 2px 2px grey;
+  }
+}
+.modal-content-body::-webkit-scrollbar {
+  width: 0 !important;
+  background-color: white !important;
+}
+
+.modal-content-body::-webkit-scrollbar-thumb {
+  width: 0 !important;
+  background-color: whitesmoke !important;
+  border-radius: 0 !important;
+}
+
+.modal-content-body::-webkit-scrollbar:horizontal {
+  width: 0 !important;
+  background-color: white !important;
+}
+
+.modal-content-body::-webkit-scrollbar-thumb:horizontal {
+  width: 0 !important;
+  background-color: whitesmoke !important;
+  border-radius: 0;
+}
+
