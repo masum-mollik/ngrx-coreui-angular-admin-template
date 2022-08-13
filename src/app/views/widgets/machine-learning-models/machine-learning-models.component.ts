@@ -8,7 +8,7 @@ import {AppState} from "../state/state";
 import {IMachineLearningModel} from "../models/machine-learning-models.model";
 import {FormControl} from '@angular/forms';
 import {Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
+import {debounceTime, takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-machine-learning-model',
@@ -47,7 +47,9 @@ export class MachineLearningModelsComponent implements OnInit, OnDestroy {
 
     this.store.dispatch({type: loadMachineLearningModelsType});
 
-    this.searchText.valueChanges.subscribe(text => {
+    this.searchText.valueChanges.pipe(
+      debounceTime(500)
+    ).subscribe(text => {
       this.searchByTextOrDescription(text);
     });
   }
