@@ -20,7 +20,7 @@
         State
       </div>
       <div class="modal-item-value">
-        {{model.state}}
+        <span id="model-state-in-modal">{{model.state}}</span>
         <c-spinner *ngIf="isUpdatingState" size="sm" variant="grow"></c-spinner>
       </div>
     </div>
@@ -71,8 +71,8 @@
   </div>
   <div class="modal-content-footer">
     <div>
-      <button [appStateText]="model.state" (click)="updateStatus()" class="btn btn-primary" type="button" [disabled] = "isUpdatingState">
-        <span *ngIf="isUpdatingState" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      <button id="state-change-button" [appStateText]="model.state" (click)="updateStatus()" class="btn btn-primary" type="button" [disabled] = "isUpdatingState">
+        <span id="model-state-change-indicator" *ngIf="isUpdatingState" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         <span class="button-text" id="state" >Update</span>
       </button>
     </div>

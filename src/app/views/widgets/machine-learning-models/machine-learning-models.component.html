@@ -8,9 +8,9 @@
       <input [formControl]="searchText" id="name" placeholder="Search..." type="text">
     </div>
   </div>
-  <c-row [gutter]="4" class="mb-3" [md]="3" [xs]="1">
+  <c-row id="models-container" [gutter]="4" class="mb-3" [md]="3" [xs]="1">
     <ng-container *ngIf="machineLearningModels && machineLearningModels.length >= 0">
-      <c-col *ngFor="let model of (searchText.value || searchedTag ? filteredItems : machineLearningModels)">
+      <c-col class="model-card" *ngFor="let model of (searchText.value || searchedTag ? filteredItems : machineLearningModels)">
         <c-card class="h-100">
           <c-card-body (click)="openModalWithComponent(model)">
             <h5 cCardTitle>{{model.name}}</h5>
@@ -31,7 +31,7 @@
             </c-container>
             <div class="badge-container">
               <span class="tag-header">State</span>
-              <div>
+              <div id="state-value">
                 {{model.state}}
                 <c-spinner *ngIf="!(model.state==='On' || model.state === 'Off')" size="sm" variant="grow"></c-spinner>
               </div>
